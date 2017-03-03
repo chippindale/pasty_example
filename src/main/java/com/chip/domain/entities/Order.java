@@ -2,6 +2,7 @@ package com.chip.domain.entities;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -9,43 +10,50 @@ import java.util.HashMap;
  */
 public class Order {
     @Id
-    private Long orderID;
-    private User User;
-    private HashMap<Product,Integer> productOrdered;
+    private String id;
+    private String userAccountNum;
+    private Product[] products;
+    private int[] amounts;
     private String date;
 
-    public Order(User User, HashMap<Product, Integer> productOrdered, String date) {
-        this.User = User;
-        this.productOrdered = productOrdered;
+    public Order(String userAccountNum, Product[] products, int[]amounts, String date) {
+        this.userAccountNum = userAccountNum;
+        this.products = products;
+        this.amounts = amounts;
         this.date = date;
     }
 
-    public void addProductToOrder(Product product, int amount){
-        productOrdered.put(product, amount);
+
+    public String getUserAccountNum() {
+        return userAccountNum;
     }
 
-    public Long getOrderID() {
-        return orderID;
+    public void setUserAccountNum(String userAccountNum) {
+        this.userAccountNum = userAccountNum;
     }
 
-    public void setOrderID(Long orderID) {
-        this.orderID = orderID;
+    public Product[] getProducts() {
+        return products;
     }
 
-    public User getUser() {
-        return User;
+    public void setProducts(Product[] products) {
+        this.products = products;
     }
 
-    public void setUser(User User) {
-        this.User = User;
+    public int[] getAmounts() {
+        return amounts;
     }
 
-    public HashMap<Product, Integer> getProductOrdered() {
-        return productOrdered;
+    public void setAmounts(int[] amounts) {
+        this.amounts = amounts;
     }
 
-    public void setProductOrdered(HashMap<Product, Integer> productOrdered) {
-        this.productOrdered = productOrdered;
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getDate() {
@@ -54,5 +62,16 @@ public class Order {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id='" + id + '\'' +
+                ", user=" + userAccountNum +
+                ", products=" + Arrays.toString(products) +
+                ", amounts=" + Arrays.toString(amounts) +
+                ", date='" + date + '\'' +
+                '}';
     }
 }
