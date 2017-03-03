@@ -19,6 +19,7 @@ import static org.junit.Assert.assertNotNull;
 public class UserRepoTest {
     @Autowired
     private UserRepository userRepo;
+
     User bob = new User("username2","bob","pacman","password","bob@email.com");
     User emma = new User("username2","emma","stone","password","emma@email.com");
     User brad = new User("username3","brad","pitt","password","brad@email.com");

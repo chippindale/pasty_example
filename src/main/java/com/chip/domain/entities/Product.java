@@ -8,16 +8,16 @@ import org.springframework.data.annotation.Id;
  */
 public class Product {
     @Id
-    private Long productID;
-    private Enum<ProductType> ProductType;
+    private String id;
+    private ProductType type;
     private String name;
     private double price;
     private String description;
     private double cost;
     private double profit;
 
-    public Product(Enum<com.chip.domain.entities.ProductType> productType, String name, double price, String description, double cost) {
-        ProductType = productType;
+    public Product(ProductType type, String name, double price, String description, double cost) {
+        this.type = type;
         this.name = name;
         this.price = price;
         this.description = description;
@@ -25,20 +25,20 @@ public class Product {
         this.profit = price - cost;
     }
 
-    public Long getProductID() {
-        return productID;
+    public ProductType getType() {
+        return type;
     }
 
-    public void setProductID(Long productID) {
-        this.productID = productID;
+    public void setType(ProductType type) {
+        this.type = type;
     }
 
-    public Enum<com.chip.domain.entities.ProductType> getProductType() {
-        return ProductType;
+    public String getId() {
+        return id;
     }
 
-    public void setProductType(Enum<com.chip.domain.entities.ProductType> productType) {
-        ProductType = productType;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -79,5 +79,18 @@ public class Product {
 
     public void setProfit(double profit) {
         this.profit = profit;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id='" + id + '\'' +
+                ", type=" + type +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", cost=" + cost +
+                ", profit=" + profit +
+                '}';
     }
 }
