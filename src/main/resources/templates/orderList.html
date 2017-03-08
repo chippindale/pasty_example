@@ -6,15 +6,22 @@
 </head>
 <body>
 <div>
-        <div th:object="${orderList}">
+    <div th:each="order : ${orderList}">
+        <div th:object="${order}">
             <span th:text="*{id}"></span>
             <span th:text="*{userAccountNum}"></span>
         </div>
-    <!--<div>-->
-        <!--<div th:each="order: ${orderList}">-->
-            <!--<span th:text="*{products.name}"></span>-->
-        <!--</div>-->
-    <!--</div>-->
+    </div>
+    <div th:each="order : ${orderList}">
+        <div th:each="product: ${order.products}">
+            <span th:text="${product.name}"></span>
+        </div>
+    </div>
+    <div th:each="order : ${orderList}">
+        <div th:each="amount : ${order.amounts}">
+            <span th:text="*{amount}"></span>
+        </div>
+    </div>
 </div>
 </body>
 </html>

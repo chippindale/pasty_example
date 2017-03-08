@@ -32,4 +32,9 @@ public class UserController {
         model.addAttribute(userList);
         return new ModelAndView("userList",(Map<String,?>)model.asMap());
     }
+
+    @RequestMapping(value="/", method = RequestMethod.GET)
+    public ModelAndView index(Model model){
+        return new ModelAndView("index",(Map<String,?>)model.asMap());
+    }
 }
