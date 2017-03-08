@@ -1,10 +1,7 @@
-package com.chip.domain.repositories;
+package com.chip.domain.Repositories;
 
-import com.chip.domain.entities.Order;
-import com.chip.domain.entities.User;
+import com.chip.domain.Entities.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import java.util.List;
 
 /**
  * Created by Chloe on 03/03/2017.

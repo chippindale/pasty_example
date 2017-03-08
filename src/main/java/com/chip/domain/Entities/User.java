@@ -1,4 +1,4 @@
-package com.chip.domain.entities;
+package com.chip.domain.Entities;
 
 import org.springframework.data.annotation.Id;
 
@@ -11,6 +11,7 @@ public class User {
     private String lastName;
     private String password;
     private String email;
+    private String role;
     @Id
     private String accountNumber;
 
@@ -21,6 +22,18 @@ public class User {
         this.lastName = lastName;
         this.password = password;
         this.email = email;
+        this.role = "ROLE_USER";
+    }
+
+    public User() {
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getAccountNumber() {

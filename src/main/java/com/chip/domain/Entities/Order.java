@@ -1,9 +1,8 @@
-package com.chip.domain.entities;
+package com.chip.domain.Entities;
 
 import org.springframework.data.annotation.Id;
 
 import java.util.Arrays;
-import java.util.HashMap;
 
 /**
  * Created by Chloe on 03/03/2017.

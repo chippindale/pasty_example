@@ -1,6 +1,6 @@
-package com.chip.domain.repositories;
+package com.chip.domain.Repositories;
 
-import com.chip.domain.entities.User;
+import com.chip.domain.Entities.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**
@@ -8,4 +8,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 public interface UserRepository extends MongoRepository<User, String>{
     User findByFirstName(String firstName);
+    User findByUsernameAndPassword(String username,String password);
+    User findByUsername(String username);
+
 }

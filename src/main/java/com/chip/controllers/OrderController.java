@@ -1,7 +1,7 @@
 package com.chip.controllers;
 
-import com.chip.domain.entities.Order;
-import com.chip.domain.repositories.OrderRepository;
+import com.chip.domain.Entities.Order;
+import com.chip.domain.Repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

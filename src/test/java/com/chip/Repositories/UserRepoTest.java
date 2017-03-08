@@ -1,7 +1,7 @@
-package com.chip.repositories;
+package com.chip.Repositories;
 
-import com.chip.domain.entities.User;
-import com.chip.domain.repositories.UserRepository;
+import com.chip.domain.Entities.User;
+import com.chip.domain.Repositories.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,21 +1,18 @@
-package com.chip.repositories;
+package com.chip.Repositories;
 
-import com.chip.domain.entities.Order;
-import com.chip.domain.entities.Product;
-import com.chip.domain.entities.User;
-import com.chip.domain.repositories.OrderRepository;
-import com.chip.domain.repositories.ProductRepository;
+import com.chip.domain.Entities.Order;
+import com.chip.domain.Entities.Product;
+import com.chip.domain.Entities.User;
+import com.chip.domain.Repositories.OrderRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import java.util.HashMap;
-
-import static com.chip.domain.entities.ProductType.Cold;
-import static com.chip.domain.entities.ProductType.Drink;
-import static com.chip.domain.entities.ProductType.Hot;
+import static com.chip.domain.Entities.ProductType.Cold;
+import static com.chip.domain.Entities.ProductType.Drink;
+import static com.chip.domain.Entities.ProductType.Hot;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
