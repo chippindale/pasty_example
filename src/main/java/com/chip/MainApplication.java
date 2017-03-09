@@ -1,18 +1,18 @@
 package com.chip;
 
-import com.chip.domain.Entities.Order;
-import com.chip.domain.Entities.Product;
-import com.chip.domain.Entities.User;
-import com.chip.domain.Repositories.OrderRepository;
-import com.chip.domain.Repositories.ProductRepository;
-import com.chip.domain.Repositories.UserRepository;
+import com.chip.domain.entities.Order;
+import com.chip.domain.entities.Product;
+import com.chip.domain.entities.User;
+import com.chip.domain.repositories.OrderRepository;
+import com.chip.domain.repositories.ProductRepository;
+import com.chip.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import static com.chip.domain.Entities.ProductType.*;
+import static com.chip.domain.entities.ProductType.*;
 
 @SpringBootApplication
 @ComponentScan("com.chip")

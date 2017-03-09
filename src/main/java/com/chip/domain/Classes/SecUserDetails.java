@@ -1,54 +1,32 @@
-package com.chip.domain.Classes;
+package com.chip.domain.classes;
 
-import com.chip.domain.Entities.User;
+
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.User;
 
 import java.util.Collection;
+import java.util.Set;
 
 /**
  * Created by Chloe on 08/03/2017.
  */
-public class SecUserDetails implements UserDetails {
-    private User user;
+public class SecUserDetails extends User {
+    private com.chip.domain.entities.User user;
 
-    public SecUserDetails(User user){
+    private Set<GrantedAuthority> authorities;
+
+    public SecUserDetails(com.chip.domain.entities.User user, String username, String password,
+                          Collection<? extends GrantedAuthority> authorities) {
+        super(username,password,authorities);
+        this.setUser(user);
+    }
+
+
+    public com.chip.domain.entities.User getUser() {
+        return user;
+    }
+
+    public void setUser(com.chip.domain.entities.User user) {
         this.user = user;
-    }
-
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return user.getPassword();
-    }
-
-    @Override
-    public String getUsername() {
-        return user.getUsername();
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
     }
 }

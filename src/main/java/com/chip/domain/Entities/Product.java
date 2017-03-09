@@ -1,4 +1,4 @@
-package com.chip.domain.Entities;
+package com.chip.domain.entities;
 
 
 import org.springframework.data.annotation.Id;

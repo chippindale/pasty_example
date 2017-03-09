@@ -1,7 +1,7 @@
-package com.chip.domain.Services;
+package com.chip.domain.services;
 
-import com.chip.domain.Entities.User;
-import com.chip.domain.Repositories.UserRepository;
+import com.chip.domain.entities.User;
+import com.chip.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

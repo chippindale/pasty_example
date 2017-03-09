@@ -1,6 +1,6 @@
-package com.chip.domain.Repositories;
+package com.chip.domain.repositories;
 
-import com.chip.domain.Entities.Order;
+import com.chip.domain.entities.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 /**

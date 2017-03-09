@@ -1,8 +1,8 @@
 package com.chip.controllers;
 
-import com.chip.domain.Services.UserService;
-import com.chip.domain.Entities.User;
-import com.chip.domain.Repositories.UserRepository;
+import com.chip.domain.services.UserService;
+import com.chip.domain.entities.User;
+import com.chip.domain.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +50,7 @@ public class UserController {
     @RequestMapping(value="/register", method = RequestMethod.POST)
     public String registerUserPost(User user){
         System.out.println(user.toString());
-        userRepo.save(user);
+        userService.registerUser(user);
         return "redirect:/users";
     }
 }

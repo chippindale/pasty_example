@@ -1,7 +1,7 @@
 package com.chip.controllers;
 
-import com.chip.domain.Entities.Product;
-import com.chip.domain.Repositories.ProductRepository;
+import com.chip.domain.entities.Product;
+import com.chip.domain.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

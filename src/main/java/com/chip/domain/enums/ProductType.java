@@ -1,4 +1,4 @@
-package com.chip.domain.Enum;
+package com.chip.domain.enums;
 
 /**
  * Created by Chloe on 03/03/2017.

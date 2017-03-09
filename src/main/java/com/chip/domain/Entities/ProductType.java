@@ -1,4 +1,4 @@
-package com.chip.domain.Entities;
+package com.chip.domain.entities;
 
 /**
  * Created by Chloe on 03/03/2017.
