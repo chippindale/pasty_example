@@ -38,23 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll();
     }
 
-//    @Autowired
-//    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
-//        auth
-//                .inMemoryAuthentication()
-//                    .withUser("user").password("password").roles("USER");
-//    }
-
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
+        auth.authenticationProvider(authProvider());
         auth.inMemoryAuthentication().withUser("username").password("password").roles("USER");
     }
 
 
 
-    @Bean
-    public DaoAuthenticationProvider authProvider() {
+    private DaoAuthenticationProvider authProvider() {
     DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
     authProvider.setUserDetailsService(userDetailsService);
     authProvider.setPasswordEncoder(encoder);
