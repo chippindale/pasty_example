@@ -1,5 +1,6 @@
 package com.chip.domain.entities;
 
+import com.chip.domain.enums.Role;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -11,7 +12,7 @@ public class User {
     private String lastName;
     private String password;
     private String email;
-    private String role;
+    private Role role;
     @Id
     private String accountNumber;
 
@@ -22,17 +23,17 @@ public class User {
         this.lastName = lastName;
         this.password = password;
         this.email = email;
-        this.role = "ROLE_USER";
+        this.role = Role.ROLE_USER;
     }
 
     public User() {
     }
 
     public String getRole() {
-        return role;
+        return String.valueOf(this.role);
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 
@@ -92,7 +93,7 @@ public class User {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", accountNumber='" + accountNumber + '\'' +
-                "user role =" + role +
+                ", role =" + role +
                 '}';
     }
 }

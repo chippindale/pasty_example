@@ -49,7 +49,6 @@ public class UserController {
 
     @RequestMapping(value="/register", method = RequestMethod.POST)
     public String registerUserPost(User user){
-        System.out.println(user.toString());
         userService.registerUser(user);
         return "redirect:/users";
     }

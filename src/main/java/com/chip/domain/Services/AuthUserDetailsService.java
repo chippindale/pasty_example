@@ -33,10 +33,8 @@ public class AuthUserDetailsService implements UserDetailsService{
 //        }
 
 //        log.debug("Found user from repository {}",user.getUsername());
-
         final List<GrantedAuthority> auths = new ArrayList<GrantedAuthority>();
         auths.add(new SimpleGrantedAuthority(user.getRole()));
-
         UserDetails details = new SecUserDetails(user,user.getUsername(),user.getPassword(),auths);
         return details;
 

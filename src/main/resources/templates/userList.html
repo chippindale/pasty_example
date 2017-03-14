@@ -8,10 +8,12 @@
 <div>
     <div th:each="user: ${userList}">
         <div th:object="${user}">
+            <span th:text="*{username}"></span>
             <span th:text="*{firstName}"></span>
             <span th:text="*{lastName}"></span>
             <span th:text="*{email}"></span>
             <span th:text="*{accountNumber}"></span>
+            <span th:text="*{password}"></span>
         </div>
     </div>
 </div>

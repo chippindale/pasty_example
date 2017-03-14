@@ -6,6 +6,7 @@ import com.chip.domain.entities.User;
 import com.chip.domain.repositories.OrderRepository;
 import com.chip.domain.repositories.ProductRepository;
 import com.chip.domain.repositories.UserRepository;
+import com.chip.domain.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +28,9 @@ public class MainApplication implements CommandLineRunner{
 	@Autowired
 	private OrderRepository orderRepo;
 
+	@Autowired
+	private UserService userService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(MainApplication.class, args);
 	}
@@ -35,9 +39,9 @@ public class MainApplication implements CommandLineRunner{
 	public void run(String... args) throws Exception{
 		userRepo.deleteAll();
 		User bob = new User("username1","bob","pacman","password","bob@email.com");
-		userRepo.save(bob);
-		userRepo.save(new User("username2","emma","stone","password","emma@email.com"));
-		userRepo.save(new User("username3","brad","pitt","password","brad@email.com"));
+		userService.registerUser(bob);
+		userService.registerUser(new User("username2","emma","stone","password","emma@email.com"));
+		userService.registerUser(new User("username3","brad","pitt","password","brad@email.com"));
 
 		productRepo.deleteAll();
 		Product pasty = new Product(Hot,"Pasty",3.99,"A nice pasty",1.99);
