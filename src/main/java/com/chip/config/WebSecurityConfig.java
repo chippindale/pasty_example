@@ -51,6 +51,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.inMemoryAuthentication().withUser("username").password("password").roles("USER");
     }
 
+
+
     @Bean
     public DaoAuthenticationProvider authProvider() {
     DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
